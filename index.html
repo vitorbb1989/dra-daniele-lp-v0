@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dra. Daniele - Especialista em Facetas de Resina</title>
+  <meta name="description" content="Transforme seu sorriso com facetas de resina naturais. Mais de 500 sorrisos transformados, 10+ anos de experiencia.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FF8C00',
+            'primary-dark': '#E07800',
+            'primary-fg': '#ffffff',
+            foreground: '#1a1a1a',
+            muted: '#F5F5F5',
+            'muted-fg': '#6b7280',
+            secondary: '#F9F9F9',
+            border: '#e5e7eb'
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; color: #1a1a1a; background: #fff; -webkit-font-smoothing: antialiased; }
+    .font-serif { font-family: 'Playfair Display', Georgia, serif; }
+    html { scroll-behavior: smooth; }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #f5f5f5; }
+    ::-webkit-scrollbar-thumb { background: #FF8C00; border-radius: 4px; }
+
+    @keyframes fadeInUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes slideInLeft { from { opacity:0; transform:translateX(-40px); } to { opacity:1; transform:translateX(0); } }
+    @keyframes slideInRight { from { opacity:0; transform:translateX(40px); } to { opacity:1; transform:translateX(0); } }
+    @keyframes pulseOrange { 0%,100% { box-shadow:0 0 0 0 rgba(255,140,0,0.4); } 50% { box-shadow:0 0 0 14px rgba(255,140,0,0); } }
+
+    .animate-slide-left { animation: slideInLeft 0.8s ease-out forwards; }
+    .animate-slide-right { animation: slideInRight 0.8s ease-out forwards; }
+
+    .reveal { opacity:0; transform:translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+
+    .gallery-img { transition: transform 0.5s ease; }
+    .gallery-card:hover .gallery-img { transform: scale(1.05); }
+
+    .faq-answer { max-height:0; overflow:hidden; transition: max-height 0.4s ease, padding 0.4s ease; }
+    .faq-answer.open { max-height:300px; padding-top:16px; }
+    .faq-chevron { transition: transform 0.3s ease; }
+    .faq-chevron.open { transform: rotate(180deg); }
+
+    .navbar-scrolled { background:rgba(255,255,255,0.97); box-shadow:0 2px 20px rgba(0,0,0,0.08); }
+    .whatsapp-float { animation: pulseOrange 2s infinite; }
+
+    .case-card { position:relative; overflow:hidden; }
+    .case-card img { transition: transform 0.5s ease; }
+    .case-card:hover img { transform: scale(1.05); }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md border-b border-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </div>
+        <span class="font-serif text-xl font-bold text-foreground">Dra. Daniele</span>
+      </div>
+      <a href="https://wa.me/5581999999999?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20para%20facetas%20de%20resina." target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-lg font-medium text-sm transition-all hover:shadow-lg">
+        Agendar Avaliacao
+      </a>
+    </div>
+  </nav>
+
+  <!-- 1. HERO -->
+  <section class="relative min-h-screen flex items-center px-4 pt-24 pb-16 bg-white overflow-hidden">
+    <div class="absolute top-40 right-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-20 left-10 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+    <div class="max-w-7xl mx-auto relative z-10 w-full">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-8 text-center lg:text-left animate-slide-left">
+          <span class="inline-block bg-primary/10 text-primary text-sm px-4 py-1.5 rounded-full font-medium">
+            Especialista em Facetas de Resina em Recife
+          </span>
+          <div class="space-y-6">
+            <h1 class="font-serif text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-foreground leading-tight">
+              Transforme seu sorriso <span class="text-primary">sem desgastar</span> seus dentes
+            </h1>
+            <p class="text-lg md:text-xl text-muted-fg leading-relaxed max-w-xl mx-auto lg:mx-0">
+              Facetas de resina ultrafinas e 100% reversiveis. Resultado natural em poucas sessoes, sem dor e sem arrependimento.
+            </p>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <a href="https://wa.me/5581999999999?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20para%20facetas%20de%20resina." target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-105 font-medium">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              Agendar Avaliacao Gratuita
+            </a>
+          </div>
+          <div class="flex flex-wrap gap-8 justify-center lg:justify-start pt-4">
+            <div class="text-center lg:text-left">
+              <div class="text-3xl md:text-4xl font-bold text-foreground font-serif">500+</div>
+              <div class="text-sm text-muted-fg">Sorrisos transformados</div>
+            </div>
+            <div class="text-center lg:text-left">
+              <div class="text-3xl md:text-4xl font-bold text-foreground font-serif">4.9</div>
+              <div class="text-sm text-muted-fg flex items-center gap-1 justify-center lg:justify-start">
+                <svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                no Google
+              </div>
+            </div>
+            <div class="text-center lg:text-left">
+              <div class="text-3xl md:text-4xl font-bold text-foreground font-serif">10+</div>
+              <div class="text-sm text-muted-fg">Anos de experiencia</div>
+            </div>
+          </div>
+        </div>
+        <!-- Doctor Photo -->
+        <div class="relative lg:order-last animate-slide-right">
+          <div class="relative max-w-md mx-auto">
+            <div class="absolute -inset-4 bg-gradient-to-br from-primary/20 to-primary/5 rounded-[2rem] blur-2xl"></div>
+            <img src="fotos/daniele 2.PNG" alt="Dra. Daniele Nascimento" class="relative w-full rounded-3xl shadow-2xl object-cover aspect-[3/4]" loading="eager">
+            <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl px-5 py-3 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <div><p class="font-semibold text-foreground text-sm">100% Reversivel</p><p class="text-xs text-muted-fg">Sem desgaste dental</p></div>
+            </div>
+            <div class="absolute -top-3 -right-3 bg-white rounded-2xl shadow-xl px-4 py-2.5 flex items-center gap-2">
+              <div class="flex gap-0.5">
+                <svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <span class="text-sm font-bold text-foreground">4.9</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. PROBLEMS (UPDATED - 4 cards with gradient bars) -->
+  <section class="py-20 px-4 bg-secondary">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 space-y-4 reveal">
+        <h2 class="font-serif text-3xl md:text-4xl font-bold text-foreground">
+          Voce se incomoda com algum desses problemas?
+        </h2>
+        <p class="text-lg text-muted-fg max-w-2xl mx-auto">
+          Facetas de resina podem resolver todos eles de forma rapida e indolor
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto reveal">
+        <div class="bg-white rounded-3xl p-8 border border-border hover:border-primary/50 hover:shadow-xl transition-all duration-300 cursor-default group">
+          <div class="flex items-start gap-5">
+            <div class="w-1.5 min-h-[4rem] rounded-full bg-gradient-to-b from-primary to-primary/30 group-hover:to-primary/60 transition-all shrink-0"></div>
+            <div class="space-y-2">
+              <h3 class="font-semibold text-foreground text-xl group-hover:text-primary transition-colors">Dentes trincados ou lascados</h3>
+              <p class="text-muted-fg leading-relaxed">Pequenas rachaduras e imperfeicoes que afetam a estetica do seu sorriso</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-3xl p-8 border border-border hover:border-primary/50 hover:shadow-xl transition-all duration-300 cursor-default group">
+          <div class="flex items-start gap-5">
+            <div class="w-1.5 min-h-[4rem] rounded-full bg-gradient-to-b from-primary to-primary/30 group-hover:to-primary/60 transition-all shrink-0"></div>
+            <div class="space-y-2">
+              <h3 class="font-semibold text-foreground text-xl group-hover:text-primary transition-colors">Manchas e amarelamento</h3>
+              <p class="text-muted-fg leading-relaxed">Dentes escurecidos, descoloridos ou com manchas que nao saem com clareamento</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-3xl p-8 border border-border hover:border-primary/50 hover:shadow-xl transition-all duration-300 cursor-default group">
+          <div class="flex items-start gap-5">
+            <div class="w-1.5 min-h-[4rem] rounded-full bg-gradient-to-b from-primary to-primary/30 group-hover:to-primary/60 transition-all shrink-0"></div>
+            <div class="space-y-2">
+              <h3 class="font-semibold text-foreground text-xl group-hover:text-primary transition-colors">Espacos entre os dentes</h3>
+              <p class="text-muted-fg leading-relaxed">Diastemas que incomodam e afetam a harmonia do seu sorriso</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-3xl p-8 border border-border hover:border-primary/50 hover:shadow-xl transition-all duration-300 cursor-default group">
+          <div class="flex items-start gap-5">
+            <div class="w-1.5 min-h-[4rem] rounded-full bg-gradient-to-b from-primary to-primary/30 group-hover:to-primary/60 transition-all shrink-0"></div>
+            <div class="space-y-2">
+              <h3 class="font-semibold text-foreground text-xl group-hover:text-primary transition-colors">Dentes desalinhados ou tortos</h3>
+              <p class="text-muted-fg leading-relaxed">Pequenos desalinhamentos que podem ser corrigidos sem aparelho ortodontico</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center reveal">
+        <a href="https://wa.me/5581999999999?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20para%20facetas%20de%20resina." target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-8 py-3.5 rounded-xl font-medium transition-all hover:shadow-lg hover:scale-105">
+          Quero Resolver Meu Problema
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. HOW IT WORKS -->
+  <section class="py-20 px-4 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 space-y-4 reveal">
+        <h2 class="font-serif text-3xl md:text-4xl font-bold text-foreground">Como funciona o tratamento?</h2>
+        <p class="text-lg text-muted-fg max-w-2xl mx-auto">Processo simples, rapido e sem dor. Seu novo sorriso em 4 etapas.</p>
+      </div>
+      <div class="grid md:grid-cols-4 gap-8 reveal">
+        <div class="relative text-center">
+          <div class="space-y-4">
+            <div class="relative inline-block">
+              <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
+                <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              </div>
+              <div class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm">1</div>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-foreground">Consulta</h3>
+            <p class="text-muted-fg text-sm leading-relaxed">Avaliacao gratuita para entender seus objetivos e criar um plano personalizado.</p>
+          </div>
+          <div class="hidden md:block absolute top-10 -right-4 w-8"><svg class="w-6 h-6 text-primary/30" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+        <div class="relative text-center">
+          <div class="space-y-4">
+            <div class="relative inline-block">
+              <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
+                <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 3l1.912 5.813a2 2 0 0 0 1.275 1.275L21 12l-5.813 1.912a2 2 0 0 0-1.275 1.275L12 21l-1.912-5.813a2 2 0 0 0-1.275-1.275L3 12l5.813-1.912a2 2 0 0 0 1.275-1.275L12 3z"/></svg>
+              </div>
+              <div class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm">2</div>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-foreground">Design</h3>
+            <p class="text-muted-fg text-sm leading-relaxed">Planejamento digital do seu novo sorriso. Voce ve o resultado antes de comecar.</p>
+          </div>
+          <div class="hidden md:block absolute top-10 -right-4 w-8"><svg class="w-6 h-6 text-primary/30" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+        <div class="relative text-center">
+          <div class="space-y-4">
+            <div class="relative inline-block">
+              <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
+                <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/></svg>
+              </div>
+              <div class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm">3</div>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-foreground">Aplicacao</h3>
+            <p class="text-muted-fg text-sm leading-relaxed">Colocacao das facetas em sessoes confortaveis, sem anestesia na maioria dos casos.</p>
+          </div>
+          <div class="hidden md:block absolute top-10 -right-4 w-8"><svg class="w-6 h-6 text-primary/30" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+        <div class="text-center">
+          <div class="space-y-4">
+            <div class="relative inline-block">
+              <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
+                <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <div class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm">4</div>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-foreground">Resultado</h3>
+            <p class="text-muted-fg text-sm leading-relaxed">Sorriso transformado! Acompanhamento incluso para garantir sua satisfacao.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. BEFORE/AFTER GALLERY -->
+  <section class="py-20 px-4 bg-muted">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 space-y-4 reveal">
+        <h2 class="font-serif text-3xl md:text-4xl font-bold text-foreground">Resultados reais de pacientes</h2>
+        <p class="text-lg text-muted-fg">Mais de 500 sorrisos transformados com naturalidade</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
+        <div class="gallery-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-border">
+          <div class="relative aspect-square overflow-hidden"><img src="fotos/antes e depois 1.webp" alt="Antes e depois - Transformacao completa" class="gallery-img w-full h-full object-cover" loading="lazy"></div>
+          <div class="p-4 flex items-center justify-between">
+            <div><p class="font-semibold text-foreground">Maria S.</p><span class="text-xs text-primary font-medium border border-primary/20 rounded-full px-3 py-0.5 inline-block mt-1">8 Facetas</span></div>
+            <div class="flex gap-0.5"><svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          </div>
+        </div>
+        <div class="gallery-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-border">
+          <div class="relative aspect-square overflow-hidden"><img src="fotos/antes e depois 2.webp" alt="Antes e depois - Alinhamento" class="gallery-img w-full h-full object-cover" loading="lazy"></div>
+          <div class="p-4 flex items-center justify-between">
+            <div><p class="font-semibold text-foreground">Ana P.</p><span class="text-xs text-primary font-medium border border-primary/20 rounded-full px-3 py-0.5 inline-block mt-1">10 Facetas</span></div>
+            <div class="flex gap-0.5"><svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          </div>
+        </div>
+        <div class="gallery-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-border">
+          <div class="relative aspect-square overflow-hidden"><img src="fotos/antes e depois 444.PNG" alt="Antes e depois - Restauracao" class="gallery-img w-full h-full object-cover" loading="lazy"></div>
+          <div class="p-4 flex items-center justify-between">
+            <div><p class="font-semibold text-foreground">Carla M.</p><span class="text-xs text-primary font-medium border border-primary/20 rounded-full px-3 py-0.5 inline-block mt-1">6 Facetas</span></div>
+            <div class="flex gap-0.5"><svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          </div>
+        </div>
+        <div class="gallery-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-border">
+          <div class="relative aspect-square overflow-hidden"><img src="fotos/antes e depois.PNG" alt="Antes e depois - Correcao" class="gallery-img w-full h-full object-cover" loading="lazy"></div>
+          <div class="p-4 flex items-center justify-between">
+            <div><p class="font-semibold text-foreground">Julia R.</p><span class="text-xs text-primary font-medium border border-primary/20 rounded-full px-3 py-0.5 inline-block mt-1">12 Facetas</span></div>
+            <div class="flex gap-0.5"><svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          </div>
+        </div>
+        <div class="gallery-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-border">
+          <div class="relative aspect-square overflow-hidden"><img src="fotos/antes e depois 2333.PNG" alt="Antes e depois - Harmonizacao" class="gallery-img w-full h-full object-cover" loading="lazy"></div>
+          <div class="p-4 flex items-center justify-between">
+            <div><p class="font-semibold text-foreground">Fernanda L.</p><span class="text-xs text-primary font-medium border border-primary/20 rounded-full px-3 py-0.5 inline-block mt-1">8 Facetas</span></div>
+            <div class="flex gap-0.5"><svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          </div>
+        </div>
+        <div class="gallery-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-border">
+          <div class="relative aspect-square overflow-hidden"><img src="fotos/antes e depois 23332.PNG" alt="Antes e depois - Lentes Premium" class="gallery-img w-full h-full object-cover" loading="lazy"></div>
+          <div class="p-4 flex items-center justify-between">
+            <div><p class="font-semibold text-foreground">Patricia O.</p><span class="text-xs text-primary font-medium border border-primary/20 rounded-full px-3 py-0.5 inline-block mt-1">10 Facetas</span></div>
+            <div class="flex gap-0.5"><svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-4 h-4 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-12 text-center reveal">
+        <a href="https://wa.me/5581999999999?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20para%20facetas%20de%20resina." target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-8 py-3.5 rounded-xl font-medium transition-all hover:shadow-lg hover:scale-105">
+          Quero Minha Transformacao <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. CASOS REAIS -->
+  <section class="py-20 px-4 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 space-y-4 reveal">
+        <h2 class="font-serif text-3xl md:text-4xl font-bold text-foreground">Casos Reais - Pacientes Felizes</h2>
+        <p class="text-lg text-muted-fg">Mais de 500 sorrisos transformados com naturalidade e tecnica premium</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
+        <div class="case-card rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-border"><img src="fotos/caso real.PNG" alt="Caso real" class="w-full aspect-square object-cover" loading="lazy"></div>
+        <div class="case-card rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-border"><img src="fotos/Caso real 1.webp" alt="Caso real" class="w-full aspect-square object-cover" loading="lazy"></div>
+        <div class="case-card rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-border"><img src="fotos/Caso real 2.webp" alt="Caso real" class="w-full aspect-square object-cover" loading="lazy"></div>
+        <div class="case-card rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-border"><img src="fotos/caso real 222.PNG" alt="Caso real" class="w-full aspect-square object-cover" loading="lazy"></div>
+        <div class="case-card rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-border"><img src="fotos/caso real 5.PNG" alt="Caso real" class="w-full aspect-square object-cover" loading="lazy"></div>
+        <div class="case-card rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-border"><img src="fotos/caso real2222e.PNG" alt="Caso real" class="w-full aspect-square object-cover" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. SOCIAL PROOF -->
+  <section class="py-20 px-4 bg-secondary">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 space-y-4 reveal">
+        <div class="flex items-center justify-center gap-2 mb-4">
+          <svg class="w-8 h-8 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-8 h-8 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-8 h-8 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-8 h-8 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-8 h-8 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h2 class="font-serif text-3xl md:text-4xl font-bold text-foreground">Avaliacao 4.9/5 no Google</h2>
+        <p class="text-lg text-muted-fg">Baseado em mais de 200 avaliacoes verificadas</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8 reveal">
+        <div class="bg-muted/50 rounded-2xl p-8 space-y-6 hover:shadow-lg transition-all">
+          <div class="flex gap-1"><svg class="w-5 h-5 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-5 h-5 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-5 h-5 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-5 h-5 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-5 h-5 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <p class="text-foreground leading-relaxed">&ldquo;Sempre tive vergonha de sorrir por causa dos meus dentes manchados. A Dra. Daniele mudou minha vida! O resultado ficou tao natural que ninguem percebe que sao facetas.&rdquo;</p>
+          <div class="flex items-center gap-4 pt-4 border-t border-border"><div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white font-bold text-xl">J</div><div><p class="font-semibold text-foreground">Juliana Oliveira</p><p class="text-sm text-muted-fg">Boa Viagem, Recife</p><span class="text-xs text-primary font-medium border border-primary/20 rounded-full px-2 py-0.5 inline-block mt-1">8 facetas</span></div></div>
+        </div>
+        <div class="bg-muted/50 rounded-2xl p-8 space-y-6 hover:shadow-lg transition-all">
+          <div class="flex gap-1"><svg class="w-5 h-5 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-5 h-5 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-5 h-5 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-5 h-5 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-5 h-5 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <p class="text-foreground leading-relaxed">&ldquo;Procurei varios dentistas antes de conhecer a Dra. Daniele. A diferenca esta no cuidado e na tecnica. Sem desgaste nenhum e meu sorriso ficou perfeito e natural.&rdquo;</p>
+          <div class="flex items-center gap-4 pt-4 border-t border-border"><div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white font-bold text-xl">C</div><div><p class="font-semibold text-foreground">Camila Santos</p><p class="text-sm text-muted-fg">Casa Forte, Recife</p><span class="text-xs text-primary font-medium border border-primary/20 rounded-full px-2 py-0.5 inline-block mt-1">10 facetas</span></div></div>
+        </div>
+        <div class="bg-muted/50 rounded-2xl p-8 space-y-6 hover:shadow-lg transition-all">
+          <div class="flex gap-1"><svg class="w-5 h-5 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-5 h-5 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-5 h-5 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-5 h-5 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="w-5 h-5 fill-primary text-primary" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <p class="text-foreground leading-relaxed">&ldquo;Tinha muito medo de fazer facetas e ficar artificial. A Dra. explicou tudo com calma e o resultado superou minhas expectativas. Parece que nasci com esse sorriso.&rdquo;</p>
+          <div class="flex items-center gap-4 pt-4 border-t border-border"><div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white font-bold text-xl">P</div><div><p class="font-semibold text-foreground">Patricia Lima</p><p class="text-sm text-muted-fg">Pina, Recife</p><span class="text-xs text-primary font-medium border border-primary/20 rounded-full px-2 py-0.5 inline-block mt-1">6 facetas</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. REVERSIBILITY COMPARISON -->
+  <section class="py-20 px-4 bg-primary/5">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16 space-y-4 reveal">
+        <span class="inline-block bg-primary/10 text-primary text-base px-4 py-1.5 rounded-full font-medium">100% Reversivel</span>
+        <h2 class="font-serif text-3xl md:text-4xl font-bold text-foreground">Por que escolher Facetas de Resina?</h2>
+        <p class="text-lg text-muted-fg max-w-2xl mx-auto">Preservamos seus dentes naturais. Sem desgaste, sem arrependimento.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8 reveal">
+        <div class="bg-white border-2 border-primary rounded-2xl shadow-lg p-8 space-y-6">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center"><svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+            <h3 class="font-serif text-2xl font-bold text-foreground">Facetas de Resina</h3>
+          </div>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-foreground">Sem desgaste dental (ou minimo)</span></li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-foreground">Processo reversivel a qualquer momento</span></li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-foreground">Reparo facil se necessario</span></li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-foreground">Resultado em poucas sessoes</span></li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-foreground">Mais acessivel financeiramente</span></li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-foreground">Aparencia natural e personalizada</span></li>
+          </ul>
+        </div>
+        <div class="bg-gray-50 border border-gray-200 rounded-2xl p-8 space-y-6">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center"><svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <h3 class="font-serif text-2xl font-bold text-gray-400">Facetas de Porcelana</h3>
+          </div>
+          <ul class="space-y-4 text-gray-400">
+            <li class="flex items-start gap-3"><div class="w-5 h-5 rounded-full border-2 border-gray-300 mt-0.5 shrink-0"></div><span>Requer desgaste permanente do dente</span></li>
+            <li class="flex items-start gap-3"><div class="w-5 h-5 rounded-full border-2 border-gray-300 mt-0.5 shrink-0"></div><span>Processo irreversivel</span></li>
+            <li class="flex items-start gap-3"><div class="w-5 h-5 rounded-full border-2 border-gray-300 mt-0.5 shrink-0"></div><span>Troca completa se quebrar</span></li>
+            <li class="flex items-start gap-3"><div class="w-5 h-5 rounded-full border-2 border-gray-300 mt-0.5 shrink-0"></div><span>Multiplas consultas necessarias</span></li>
+            <li class="flex items-start gap-3"><div class="w-5 h-5 rounded-full border-2 border-gray-300 mt-0.5 shrink-0"></div><span>Investimento mais alto</span></li>
+            <li class="flex items-start gap-3"><div class="w-5 h-5 rounded-full border-2 border-gray-300 mt-0.5 shrink-0"></div><span>Pode parecer muito uniforme</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. DURABILITY -->
+  <section class="py-20 px-4 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16 space-y-4 reveal">
+        <h2 class="font-serif text-3xl md:text-4xl font-bold text-foreground">Durabilidade e Cuidados</h2>
+        <p class="text-lg text-muted-fg max-w-2xl mx-auto">Com os cuidados corretos, suas facetas podem durar muitos anos</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 mb-12 reveal">
+        <div class="bg-muted/30 rounded-2xl p-6 text-center"><svg class="w-10 h-10 text-primary mx-auto mb-3" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><h3 class="font-serif text-xl font-bold text-foreground">5-10 Anos</h3><p class="text-sm text-muted-fg mt-1">Durabilidade media com cuidados adequados</p></div>
+        <div class="bg-muted/30 rounded-2xl p-6 text-center"><svg class="w-10 h-10 text-primary mx-auto mb-3" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><h3 class="font-serif text-xl font-bold text-foreground">Garantia</h3><p class="text-sm text-muted-fg mt-1">Acompanhamento incluso pos-tratamento</p></div>
+        <div class="bg-muted/30 rounded-2xl p-6 text-center"><svg class="w-10 h-10 text-primary mx-auto mb-3" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><h3 class="font-serif text-xl font-bold text-foreground">Reparo Facil</h3><p class="text-sm text-muted-fg mt-1">Manutencao simples se necessario</p></div>
+      </div>
+      <div class="bg-primary/5 border border-primary/20 rounded-2xl p-8 reveal">
+        <h3 class="font-serif text-xl font-bold text-foreground mb-6 text-center">Dicas de Cuidados</h3>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="flex items-center gap-3"><svg class="w-5 h-5 text-primary shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-foreground">Escove os dentes apos as refeicoes</span></div>
+          <div class="flex items-center gap-3"><svg class="w-5 h-5 text-primary shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-foreground">Use fio dental diariamente</span></div>
+          <div class="flex items-center gap-3"><svg class="w-5 h-5 text-primary shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-foreground">Evite morder objetos duros</span></div>
+          <div class="flex items-center gap-3"><svg class="w-5 h-5 text-primary shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-foreground">Visite o dentista regularmente</span></div>
+          <div class="flex items-center gap-3"><svg class="w-5 h-5 text-primary shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-foreground">Evite alimentos muito pigmentados</span></div>
+          <div class="flex items-center gap-3"><svg class="w-5 h-5 text-primary shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span class="text-foreground">Use protetor bucal se tiver bruxismo</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. AUTHORITY -->
+  <section class="py-20 px-4 bg-muted">
+    <div class="max-w-5xl mx-auto">
+      <div class="bg-white rounded-3xl shadow-xl overflow-hidden reveal">
+        <div class="grid md:grid-cols-5">
+          <div class="md:col-span-2 relative min-h-[400px] md:min-h-full">
+            <img src="fotos/Foto Doutora.webp" alt="Dra. Daniele Nascimento" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+            <div class="absolute bottom-4 left-4"><span class="bg-white/90 backdrop-blur text-foreground px-3 py-1.5 rounded-lg text-sm font-medium shadow">CRO-PE 12345</span></div>
+          </div>
+          <div class="md:col-span-3 p-8 md:p-12 space-y-6">
+            <div>
+              <h2 class="font-serif text-3xl md:text-4xl font-bold text-foreground mb-2">Dra. Daniele Barboza</h2>
+              <p class="text-primary font-medium text-lg">Especialista em Facetas de Resina</p>
+            </div>
+            <div class="space-y-4 text-muted-fg leading-relaxed">
+              <p>Com mais de 10 anos dedicados exclusivamente a odontologia estetica, a Dra. Daniele e referencia em Recife quando o assunto e naturalidade em facetas de resina.</p>
+              <p>Formada pela UFPE com especializacao em Dentistica Restauradora, ja transformou mais de 500 sorrisos com sua tecnica conservadora que preserva ao maximo a estrutura natural dos dentes.</p>
+              <p>Sua clinica de alto padrao e dedicada exclusivamente a facetas de resina, garantindo foco total em excelencia e resultados que respeitam a individualidade de cada paciente.</p>
+            </div>
+            <div class="flex flex-wrap gap-3 pt-4">
+              <span class="bg-primary/10 text-primary text-sm px-3 py-1 rounded-full font-medium">UFPE - Odontologia</span>
+              <span class="bg-primary/10 text-primary text-sm px-3 py-1 rounded-full font-medium">Especialista em Dentistica</span>
+              <span class="bg-primary/10 text-primary text-sm px-3 py-1 rounded-full font-medium">500+ Transformacoes</span>
+              <span class="bg-primary/10 text-primary text-sm px-3 py-1 rounded-full font-medium">10+ Anos Experiencia</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. FAQ -->
+  <section class="py-20 px-4 bg-white">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-16 space-y-4 reveal">
+        <h2 class="font-serif text-3xl md:text-4xl font-bold text-foreground">Perguntas Frequentes</h2>
+        <p class="text-lg text-muted-fg">Tire todas as suas duvidas sobre facetas de resina</p>
+      </div>
+      <div class="space-y-4 reveal">
+        <div class="faq-item bg-muted/30 border border-border rounded-2xl cursor-pointer transition-all hover:border-primary/30" onclick="toggleFaq(this)">
+          <div class="p-6 flex items-center justify-between gap-4"><h3 class="font-semibold text-lg text-foreground">O procedimento doi?</h3><svg class="faq-chevron w-5 h-5 text-primary shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="faq-answer px-6 pb-6"><p class="text-muted-fg leading-relaxed border-t border-border pt-4">Nao! Na maioria dos casos, nao e necessaria anestesia. O processo e confortavel e indolor. Pacientes relatam que e ate relaxante.</p></div>
+        </div>
+        <div class="faq-item bg-muted/30 border border-border rounded-2xl cursor-pointer transition-all hover:border-primary/30" onclick="toggleFaq(this)">
+          <div class="p-6 flex items-center justify-between gap-4"><h3 class="font-semibold text-lg text-foreground">Quanto tempo dura o tratamento?</h3><svg class="faq-chevron w-5 h-5 text-primary shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="faq-answer px-6 pb-6"><p class="text-muted-fg leading-relaxed border-t border-border pt-4">O tratamento completo leva de 2 a 4 sessoes, dependendo da quantidade de facetas. Cada sessao dura em media 2 horas.</p></div>
+        </div>
+        <div class="faq-item bg-muted/30 border border-border rounded-2xl cursor-pointer transition-all hover:border-primary/30" onclick="toggleFaq(this)">
+          <div class="p-6 flex items-center justify-between gap-4"><h3 class="font-semibold text-lg text-foreground">Qual o valor do investimento?</h3><svg class="faq-chevron w-5 h-5 text-primary shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="faq-answer px-6 pb-6"><p class="text-muted-fg leading-relaxed border-t border-border pt-4">O valor varia de acordo com a quantidade de facetas e complexidade do caso. Na consulta gratuita, fazemos uma avaliacao e apresentamos um orcamento personalizado com opcoes de pagamento.</p></div>
+        </div>
+        <div class="faq-item bg-muted/30 border border-border rounded-2xl cursor-pointer transition-all hover:border-primary/30" onclick="toggleFaq(this)">
+          <div class="p-6 flex items-center justify-between gap-4"><h3 class="font-semibold text-lg text-foreground">As facetas podem manchar ou amarelar?</h3><svg class="faq-chevron w-5 h-5 text-primary shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="faq-answer px-6 pb-6"><p class="text-muted-fg leading-relaxed border-t border-border pt-4">Com os cuidados adequados, as facetas mantem sua cor por anos. Evitar excesso de cafe, vinho e cigarro ajuda na durabilidade da cor.</p></div>
+        </div>
+        <div class="faq-item bg-muted/30 border border-border rounded-2xl cursor-pointer transition-all hover:border-primary/30" onclick="toggleFaq(this)">
+          <div class="p-6 flex items-center justify-between gap-4"><h3 class="font-semibold text-lg text-foreground">E se eu nao gostar do resultado?</h3><svg class="faq-chevron w-5 h-5 text-primary shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="faq-answer px-6 pb-6"><p class="text-muted-fg leading-relaxed border-t border-border pt-4">Por ser reversivel, as facetas de resina podem ser removidas a qualquer momento sem danos aos seus dentes naturais. Alem disso, fazemos um planejamento detalhado para garantir que o resultado seja exatamente o que voce espera.</p></div>
+        </div>
+        <div class="faq-item bg-muted/30 border border-border rounded-2xl cursor-pointer transition-all hover:border-primary/30" onclick="toggleFaq(this)">
+          <div class="p-6 flex items-center justify-between gap-4"><h3 class="font-semibold text-lg text-foreground">Posso comer normalmente?</h3><svg class="faq-chevron w-5 h-5 text-primary shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="faq-answer px-6 pb-6"><p class="text-muted-fg leading-relaxed border-t border-border pt-4">Sim! Voce pode comer normalmente. Recomendamos apenas evitar morder alimentos muito duros diretamente com os dentes da frente, como macas inteiras ou gelo.</p></div>
+        </div>
+        <div class="faq-item bg-muted/30 border border-border rounded-2xl cursor-pointer transition-all hover:border-primary/30" onclick="toggleFaq(this)">
+          <div class="p-6 flex items-center justify-between gap-4"><h3 class="font-semibold text-lg text-foreground">Quanto tempo duram as facetas?</h3><svg class="faq-chevron w-5 h-5 text-primary shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="faq-answer px-6 pb-6"><p class="text-muted-fg leading-relaxed border-t border-border pt-4">Com os cuidados corretos, as facetas de resina duram em media de 5 a 10 anos. Oferecemos acompanhamento regular para garantir a durabilidade.</p></div>
+        </div>
+        <div class="faq-item bg-muted/30 border border-border rounded-2xl cursor-pointer transition-all hover:border-primary/30" onclick="toggleFaq(this)">
+          <div class="p-6 flex items-center justify-between gap-4"><h3 class="font-semibold text-lg text-foreground">Qual a diferenca para lentes de contato dental?</h3><svg class="faq-chevron w-5 h-5 text-primary shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="faq-answer px-6 pb-6"><p class="text-muted-fg leading-relaxed border-t border-border pt-4">Lentes de contato dental e outro nome para facetas ultrafinas. Na pratica, utilizamos a mesma tecnica conservadora que preserva seus dentes naturais.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. FINAL CTA + FORM -->
+  <section class="py-24 px-4 bg-primary/5 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5"></div>
+    <div class="max-w-4xl mx-auto relative z-10">
+      <div class="text-center mb-12 space-y-4 reveal">
+        <span class="inline-block bg-primary text-white text-base px-5 py-2 rounded-full font-medium">Vagas Limitadas Este Mes</span>
+        <h2 class="font-serif text-3xl md:text-5xl font-bold text-foreground leading-tight">Pronto para transformar seu sorriso?</h2>
+        <p class="text-lg md:text-xl text-muted-fg max-w-2xl mx-auto">Agende sua avaliacao gratuita e descubra como as facetas de resina podem mudar sua vida</p>
+      </div>
+      <div class="bg-white shadow-2xl rounded-3xl max-w-xl mx-auto p-8 space-y-6 reveal">
+        <div class="space-y-4">
+          <div><label class="text-sm font-medium text-foreground mb-2 block">Seu Nome</label><input type="text" placeholder="Digite seu nome completo" class="w-full bg-muted/50 border border-border rounded-xl h-12 px-4 text-foreground placeholder-muted-fg focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"></div>
+          <div><label class="text-sm font-medium text-foreground mb-2 block">WhatsApp</label><input type="tel" placeholder="(81) 99999-9999" class="w-full bg-muted/50 border border-border rounded-xl h-12 px-4 text-foreground placeholder-muted-fg focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"></div>
+          <div><label class="text-sm font-medium text-foreground mb-2 block">E-mail</label><input type="email" placeholder="seu@email.com" class="w-full bg-muted/50 border border-border rounded-xl h-12 px-4 text-foreground placeholder-muted-fg focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"></div>
+        </div>
+        <a href="https://wa.me/5581999999999?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20para%20facetas%20de%20resina." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white text-lg py-4 rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] font-medium">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          Quero Minha Avaliacao Gratuita
+        </a>
+        <p class="text-center text-sm text-muted-fg">Ou fale diretamente pelo WhatsApp</p>
+        <a href="https://wa.me/5581999999999?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20para%20facetas%20de%20resina." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 border-2 border-green-500 text-green-600 hover:bg-green-50 py-3.5 rounded-xl font-medium transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          Chamar no WhatsApp
+        </a>
+      </div>
+      <p class="text-center text-sm text-muted-fg mt-6">Atendimento em Recife - PE | Resposta em ate 2 horas</p>
+    </div>
+  </section>
+
+  <!-- 12. FOOTER -->
+  <footer class="py-16 px-4 bg-gray-900 text-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-12 mb-12">
+        <div class="md:col-span-2 space-y-6">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center"><svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+            <span class="font-serif text-2xl font-bold">Dra. Daniele Barboza</span>
+          </div>
+          <p class="text-gray-400 leading-relaxed max-w-md">Especialista em facetas de resina em Recife. Transformando sorrisos com naturalidade e tecnica conservadora ha mais de 10 anos.</p>
+          <div class="flex gap-4">
+            <a href="https://instagram.com/dradaniele" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <h4 class="font-semibold text-lg">Contato</h4>
+          <div class="space-y-3 text-gray-400">
+            <a href="tel:+5581999999999" class="flex items-center gap-3 hover:text-primary transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(81) 99999-9999</a>
+            <a href="mailto:contato@dradaniele.com.br" class="flex items-center gap-3 hover:text-primary transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>contato@dradaniele.com.br</a>
+            <div class="flex items-start gap-3"><svg class="w-5 h-5 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Av. Boa Viagem, 1234<br>Boa Viagem, Recife - PE</span></div>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <h4 class="font-semibold text-lg">Horarios</h4>
+          <div class="space-y-3 text-gray-400">
+            <div class="flex items-center gap-3"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><div><p>Segunda a Sexta</p><p class="font-medium text-white">8h as 18h</p></div></div>
+            <div class="flex items-center gap-3"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><div><p>Sabado</p><p class="font-medium text-white">8h as 12h</p></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+        <p>2024 Dra. Daniele Barboza. Todos os direitos reservados.</p>
+        <div class="flex gap-6"><a href="#" class="hover:text-primary transition-colors">Politica de Privacidade</a><a href="#" class="hover:text-primary transition-colors">Termos de Uso</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/5581999999999?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20para%20facetas%20de%20resina." target="_blank" rel="noopener noreferrer"
+     class="whatsapp-float fixed bottom-6 right-6 z-50 w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all group">
+    <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span class="absolute right-full mr-3 bg-white text-foreground px-4 py-2 rounded-lg shadow-lg text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">Fale Conosco</span>
+  </a>
+
+  <script>
+    function toggleFaq(el){const a=el.querySelector('.faq-answer'),c=el.querySelector('.faq-chevron'),o=a.classList.contains('open');document.querySelectorAll('.faq-answer').forEach(x=>x.classList.remove('open'));document.querySelectorAll('.faq-chevron').forEach(x=>x.classList.remove('open'));document.querySelectorAll('.faq-item').forEach(x=>x.classList.remove('border-primary/50','shadow-md'));if(!o){a.classList.add('open');c.classList.add('open');el.classList.add('border-primary/50','shadow-md');}}
+    const nb=document.getElementById('navbar');window.addEventListener('scroll',()=>{nb.classList.toggle('navbar-scrolled',window.scrollY>50);});
+    const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');});},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  </script>
+</body>
+</html>
